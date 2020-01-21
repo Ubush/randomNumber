@@ -1,0 +1,32 @@
+<!DOCTYPE HTML >
+<script>
+function nameIs(){
+let name = prompt('Как тебя зовут?', 'Басан');
+while (name == '' || name == null) {
+name = prompt('Как тебя зовут?', 'Басан');
+};
+alert('Привет, ' + name + '. Я загадал число от 1 до 100. Попробуй его отгадать за наименьшее число попыток. После каждой попытки я буду говорить "мало", "много" или "угадал"');
+};
+ 
+nameIs();
+
+let number = Math.ceil(Math.random() * 100);
+let guess = prompt('Какое число я загадал?');
+let numberOfGuesses = 1;
+
+while (guess != number) {
+	if (guess > number) { 
+	guess = prompt('Много. Попробуй еще раз');
+	numberOfGuesses = numberOfGuesses + 1;
+	}
+	
+	if (guess < number) {
+	guess = prompt('Мало. Попробуй еще раз')
+	numberOfGuesses = numberOfGuesses + 1;
+	}
+
+}
+
+alert('Ты угадал. Это число ' + number + '. Тебе понадобилось ' + numberOfGuesses + ' попыток');	
+	
+</script>
